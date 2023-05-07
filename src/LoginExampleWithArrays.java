@@ -1,9 +1,11 @@
 import java.util.Scanner;
 
-public class LoginExampleOne {
+public class LoginExampleWithArrays {
     public static void main(String[] args) {
-        String username = "fmarin";
-        String password = "Hello1234.";
+
+        String[] users = { "fmarin", "francmarin98"};
+        String[] passwords = {"12345", "54321"};
+
         boolean isAuth = false;
 
         Scanner sc = new Scanner(System.in);
@@ -14,9 +16,13 @@ public class LoginExampleOne {
         System.out.print("Ingrese la contraseña:" );
         String pass = sc.next();
 
-        if(username.equals(user) && password.equals(pass)){
-            isAuth = true;
+        for (int i = 0; i < users.length; i++) {
+            if (users[i].equals(user) && passwords[i].equals(pass)) {
+                isAuth = true;
+                break;
+            }
         }
+
 
         if (isAuth){
             System.out.println("Login exitoso");
